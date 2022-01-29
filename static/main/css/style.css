@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+
+.header {
+background-color: red;
+}
+
+.header__items{
+display: flex;
+justify-content: space-between;
+}
+
+/*——————————*/
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin: 70px 0px 50px 0px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.li-wrapper {
+  margin: 0px 0px 50px 0px;
+  text-align: center;
+}
+
+.li-wrapper li {
+  margin: 0px 30px 0px 0px;
+  display: inline-block;
+  color: #000;
+}
+
+.img1 {
+  width: 40px;
+  height: 40px;
+  margin: 0px 0px 20px 0px;
+}
+
+.card-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 400px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #AFEEEE;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0px 10px 0px 0px;
+}
+
+.card:last-child {
+  margin: 0px 0px 0px 0px;
+}
+
+.service, .time, .price, .btn {
+  margin-bottom: 20px;
+}
+
+.service {
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: #1E90FF;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+

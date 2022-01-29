@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<div class="card">
+    <h4 class="service">{{ service.title }}</h4>
+    {% if service.photo %}
+    <img class="img1" src="{{service.photo.url}}" alt="">
+    {% endif %}
+    <p class="time">{{ service.duration }}</p>
+    <p class="price"> {{ service.prefix }} {{ service.default_price }} {{ service.postfix }}</p>
+    {% if price_list %}
+    <select>
+        {% for price in price_list %}
+        <option>{{ price.body }} - {{ price.price_from }} $</option>
+<!--        <p>{{ price.price_from }}</p>-->
+<!--        <p>{{ price.price_to }}</p>-->
+        {% endfor %}
+    </select>
+
+    {% endif %}
+    <button class="btn">Заказать сейчас</button>
+</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+существует доступное время и дата, существуют записи на обслуживание
+1) база на дату с доступными временными интервалами,
+2) в сервисе длительность указывать в количествах интервалов
+3) по запросу смотреть длительность в интервалах и смотреть доступную серию интевалов(проверять следующие поля)
+
+
+Юзер может записаться на обслуживание
+Отображаются только доступные дата и время
+Доступные даты и время изменяются при срабатывании коллбэка с интеграции
+
+При выборе даты и времени нужно ввести данные
+
+
+schedule
+    date = DateTime
+    start = Time
+    end = Time
+
+Appointments
+    date = ForeignKey
+    name
+    email
+    phone
+    start
+    end
+
+
+def available_sections_check(int):
+    array = [[9,9:30], [10, 10:30], [10:30, 11], [11, 11:30], [13:30, 14:00], [14, 14:30], [14:30, 15], [15:30, 16], [16:30, 17], [17, 17:30]]
+    for i in array:
+        new_array[0] = i[0]
+        new_array[1] = i[1]
+        if i[1] == i.next[0]:
+            new_array[1] = i.next[0]
+
+
+schedule = [9, 17.5]
+duration = service.duration
+
+array = Appointment.objects.filter(date = user_choice_date)
+array = [[9, 9],[10, 11],[12, 13],[13.5, 15],[17, 17.5]]
+start = array[0][0] > schedule[0] ? schedule[0] : array[0][0]
+
+
+def build_available_time_choices(date, service):
+
+    array, duration = get_parsed_schedule_data()
+
+    if array[0][0] > schedule[0]:
+        array = [schedule[0], schedule[0]] + array
+
+    for i in range(array.length):
+        if array[i+1][0] - array[i][1] >= duration:
+            delta = 0
+            interval = array[i+1][0] - array[i][1]
+            while interval > duration:
+                new_array.append(array[i][1]+delta)
+                delta += 0.5
+                interval -= 0.5
+
+def get_parsed_schedule_data(date, service):
+
+    schedule = Schedule.objects.filter(date=date)
+    service_item = Service.objects.get(pk=service)
+    duration  = service_item.duration
+    booked_time_queryset = Appointment.objects.filter(date=user_choice_date)
+    booked_time_sequence = [[booking.start, booking.end] for booking in booked_time_queryset]
+    booked_time_sequence = []
+    return booked_time_sequence, duration
+
+
+new_array  [15, 15.5]
+new_array [11, 15, 15.5, 16]
+
+def get_available_time(array, duration):
+    for i in array:
+        if i[1] - i[0] > duration:
+

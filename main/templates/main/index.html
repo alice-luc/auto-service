@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+{% load i18n main_tags %}
+{% block content %}
+	<div class="wrapper">
+		<h2> {% trans "Наши услуги" %} </h2>
+		{% get_service_type as service_types %}
+		<ul class="li-wrapper">
+			{% for type in service_types %}
+			{% if type.pk == service_type_selected %}
+			<li class="selected">{{ type.title }}</li>
+			{% else %}
+			<li><a href="{{ type.get_absolute_url }}">{{ type.title }}</a></li>
+			{% endif %}
+			{% endfor %}
+		</ul>
+
+		<div class="card-flex">
+			{% for service in services %}
+
+			<div class="card">
+				<h4 class="service"><a href="{% url 'service_detail' service.slug %}">{{ service.title }}</a></h4>
+				{% if service.photo %}
+				<img class="img1" src="{{service.photo.url}}" alt="">
+				{% endif %}
+				<p class="time">{{ service.duration }}</p>
+				<p class="price"> {{ service.service_type.prefix }} {{ service.price }} {{ service.service_type.postfix }}</p>
+				<button class="btn">{% trans "Заказать сейчас" %}</button>
+			</div>
+
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
