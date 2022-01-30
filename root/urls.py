@@ -16,12 +16,13 @@ urlpatterns += i18n_patterns(
     # path('appointment/', include('schedule.urls'))
 )
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-else:
-    urlpatterns += [
-        path(f'^{settings.MEDIA_URL.lstrip("/")}(?P<path>.*)S',
-            serve, {'document_root': settings.MEDIA_ROOT}),
-        path(f'^{settings.STATIC_URL.lstrip("/")}(?P<path>.*)S',
-            serve, {'document_root': settings.STATIC_ROOT}),
-    ]
+# if settings.DEBUG:
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# else:
+#     urlpatterns += [
+#         path(f'^{settings.MEDIA_URL.lstrip("/")}(?P<path>.*)S',
+#             serve, {'document_root': settings.MEDIA_ROOT}),
+#         path(f'^{settings.STATIC_URL.lstrip("/")}(?P<path>.*)S',
+#             serve, {'document_root': settings.STATIC_ROOT}),
+#     ]

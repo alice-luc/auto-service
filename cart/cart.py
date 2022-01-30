@@ -5,7 +5,16 @@ from main.models import Service
 
 
 class Cart(object):
+    """
+    INITIATE NEW CART
+    new_cart=Cart(request)
 
+    ADD SERVICE TO CART
+    new_cart.add(service, price=200, quantity=1, update_quantity=False)
+
+    REMOVE SERVICE FROM Cart
+    new_cart.remove(service)
+    """
     def __init__(self, request):
         """
         Cart Initialization
